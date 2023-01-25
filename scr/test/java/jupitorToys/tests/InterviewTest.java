@@ -7,91 +7,177 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import jupitorToys.objectRepository.CartPage;
-
+import jupitorToys.objectRepository.ContactPage;
 import jupitorToys.objectRepository.HomePage;
 import jupitorToys.objectRepository.ShopPage;
 
-public class HomePageTest extends BaseTest{
+public class InterviewTest extends BaseTest{
 
-//	@Test
-//	public void validateErrorMessageOnContactPage() {
-//		
-//		SoftAssert softAssert = new SoftAssert();
-//		
-//		// Get Home Page Title
-//		String homePageTitle = parentPage.getPageTitle();
-//		Assert.assertEquals(homePageTitle, "Jupiter Toys", "Home Page is not opened");
-//		
-//		// Click on Contact tab and verify if it is open
-//		parentPage.getInstanceOf(HomePage.class).clickOnContactTab();
-//		ContactPage contactPage = parentPage.getInstanceOf(ContactPage.class);
-//		String contactPageHeaderMessage = contactPage.getHeaderMessage();
-//		Assert.assertEquals(contactPageHeaderMessage, "We welcome your feedback");
-//		
-//		// Click on submit button without populating fields
-//		contactPage.clickOnSubmitButton();
-//		
-//		// Is Error Message Displayed
-//		boolean isErrorOnForenameameField = contactPage.isErrorMessageDisplayedOnfirstNameField();
-//		softAssert.assertEquals(isErrorOnForenameameField, true);
-//		
-//		boolean isErrorOnEmailField = contactPage.isErrorMessageDisplayedOnEmailField();
-//		softAssert.assertEquals(isErrorOnEmailField, true);
-//		
-//		boolean isErrorOnMessageField = contactPage.isErrorMessageDisplayedOnMessageField();
-//		softAssert.assertEquals(isErrorOnMessageField, true);
-//		
-//		// Verifying Error Message
-//		String forenameFieldError = contactPage.getForenameErrorMessage();
-//		softAssert.assertEquals(forenameFieldError, "Forename is required");
-//		
-//		String emailFieldError = contactPage.getEmailErrorMessage();
-//		softAssert.assertEquals(emailFieldError, "Email is required");
-//		
-//		String messageFieldError = contactPage.getMessageErrorMessage();
-//		softAssert.assertEquals(messageFieldError, "Message is required");
-//		
-//		// Populate mandatory fields
-//		contactPage.enterForename(propReader.getDataFromPropertiesFile("forename"));
-//		contactPage.enterEmail(propReader.getDataFromPropertiesFile("email"));
-//		contactPage.enterMessage(propReader.getDataFromPropertiesFile("message"));
-//		
-//		// Verify if error message still there
-//		boolean isErrorOnForenameame = contactPage.isErrorMessageDisplayedOnfirstNameField();
-//		boolean isErrorOnEmail = contactPage.isErrorMessageDisplayedOnEmailField();
-//		boolean isErrorOnMessage = contactPage.isErrorMessageDisplayedOnMessageField();
-//		
-//		softAssert.assertEquals(isErrorOnForenameame, false);
-//		softAssert.assertEquals(isErrorOnEmail, false);
-//		softAssert.assertEquals(isErrorOnMessage, false);
-//		softAssert.assertAll();
-//	}
+	@Test
+	public void validateErrorMessageOnContactPage() {
+		
+		// Verify if Home Page is open or not
+		parentPage.getInstanceOf(HomePage.class).clickOnHomeTab();
+		String homePageUrl = parentPage.getCurrentURL();
+		if(homePageUrl.contains("home")) {
+			extentTest.get().log(Status.PASS, "Home Page is opened");
+		}else {
+			extentTest.get().log(Status.FAIL, "Home Page is not opened");
+		}
+		Assert.assertEquals(homePageUrl, "https://jupiter.cloud.planittesting.com/#/home");
+		
+		
+		// Click on Contact tab and verify if it is open
+		parentPage.getInstanceOf(HomePage.class).clickOnContactTab();
+		ContactPage contactPage = parentPage.getInstanceOf(ContactPage.class);
+		String contactPageHeaderMessage = contactPage.getHeaderMessage();
+		if(contactPageHeaderMessage.contains("welcome")) {
+			extentTest.get().log(Status.PASS, "Contact Page is opened");
+		}else {
+			extentTest.get().log(Status.FAIL, "Contact Page is not opened");
+		}
+		Assert.assertEquals(contactPageHeaderMessage, "We welcome your feedback");
+		
+		
+		// Click on submit button without populating fields
+		contactPage.clickOnSubmitButton();
+		extentTest.get().log(Status.INFO, "Submit button is clicked");
+		
+		// Is Error Message Displayed
+		boolean isErrorOnForenameameField = contactPage.isErrorMessageDisplayedOnfirstNameField();
+		if(isErrorOnForenameameField) {
+			extentTest.get().log(Status.PASS, "Error Message displyed on forename field");
+		}else {
+			extentTest.get().log(Status.FAIL, "Error Message not displyed on forename field");
+		}
+		softAssert.assertEquals(isErrorOnForenameameField, true);
+		
+		boolean isErrorOnEmailField = contactPage.isErrorMessageDisplayedOnEmailField();
+		if(isErrorOnEmailField) {
+			extentTest.get().log(Status.PASS, "Error Message displyed on email field");
+		}else {
+			extentTest.get().log(Status.FAIL, "Error Message not displyed on email field");
+		}
+		softAssert.assertEquals(isErrorOnEmailField, true);
+		
+		boolean isErrorOnMessageField = contactPage.isErrorMessageDisplayedOnMessageField();
+		if(isErrorOnMessageField) {
+			extentTest.get().log(Status.PASS, "Error Message displyed on message field");
+		}else {
+			extentTest.get().log(Status.FAIL, "Error Message not displyed on message field");
+		}
+		softAssert.assertEquals(isErrorOnMessageField, true);
+		
+		
+		// Verifying Error Message
+		String forenameFieldError = contactPage.getForenameErrorMessage();
+		if(forenameFieldError.equalsIgnoreCase("Forename is required")) {
+			extentTest.get().log(Status.PASS, "Correct error message on forename field: "+forenameFieldError);
+		}else {
+			extentTest.get().log(Status.FAIL, "Incorrect error message on forename field");
+		}
+		softAssert.assertEquals(forenameFieldError, "Forename is required");
+		
+		String emailFieldError = contactPage.getEmailErrorMessage();
+		if(emailFieldError.equalsIgnoreCase("Email is required")) {
+			extentTest.get().log(Status.PASS, "Correct error message on email field: "+emailFieldError);
+		}else {
+			extentTest.get().log(Status.FAIL, "Incorrect error message on email field");
+		}
+		softAssert.assertEquals(emailFieldError, "Email is required");
+		
+		String messageFieldError = contactPage.getMessageErrorMessage();
+		if(messageFieldError.equalsIgnoreCase("Message is required")) {
+			extentTest.get().log(Status.PASS, "Correct error message on message field: "+messageFieldError);
+		}else {
+			extentTest.get().log(Status.FAIL, "Incorrect error message on message field");
+		}
+		softAssert.assertEquals(messageFieldError, "Message is required");
+		
+		
+		// Populate mandatory fields
+		contactPage.enterForename(propReader.getDataFromPropertiesFile("forename"));
+		extentTest.get().log(Status.INFO, "Forename field is populated with: "+propReader.getDataFromPropertiesFile("forename"));
+		contactPage.enterEmail(propReader.getDataFromPropertiesFile("email"));
+		extentTest.get().log(Status.INFO, "Email field is populated with: "+propReader.getDataFromPropertiesFile("email"));
+		contactPage.enterMessage(propReader.getDataFromPropertiesFile("message"));
+		extentTest.get().log(Status.INFO, "Message field is populated with: "+propReader.getDataFromPropertiesFile("message"));
+		
+		
+		// Verify if error message still there
+		boolean isErrorOnForenameame = contactPage.isErrorMessageDisplayedOnfirstNameField();
+		if(isErrorOnForenameame) {
+			extentTest.get().log(Status.FAIL, "Error message should not be there");
+		}else {
+			extentTest.get().log(Status.PASS, "Error message is not displayed after populating forename field");
+		}
+		softAssert.assertEquals(isErrorOnForenameame, false);
+		
+		boolean isErrorOnEmail = contactPage.isErrorMessageDisplayedOnEmailField();
+		if(isErrorOnEmail) {
+			extentTest.get().log(Status.FAIL, "Error message should not be there");
+		}else {
+			extentTest.get().log(Status.PASS, "Error message is not displayed after populating email field");
+		}
+		softAssert.assertEquals(isErrorOnEmail, false);
+		
+		boolean isErrorOnMessage = contactPage.isErrorMessageDisplayedOnMessageField();
+		if(isErrorOnMessage) {
+			extentTest.get().log(Status.FAIL, "Error message should not be there");
+		}else {
+			extentTest.get().log(Status.PASS, "Error message is not displayed after populating message field");
+		}
+		softAssert.assertEquals(isErrorOnMessage, false);
+		
+		softAssert.assertAll();
+	}
 
-//	@Test(dataProvider = "data-provider")
-//	public void validateSuccessfulSubmission(String forename, String email, String message) {
-//		
-//		// Get Home Page Title
-//		String homePageTitle = parentPage.getPageTitle();
-//		Assert.assertEquals(homePageTitle, "Jupiter Toys");
-//		
-//		// Click on Contact tab and verify if it is open
-//		parentPage.getInstanceOf(HomePage.class).clickOnContactTab();
-//		ContactPage contactPage = parentPage.getInstanceOf(ContactPage.class);
-//		String contactPageHeaderMessage = contactPage.getHeaderMessage();
-//		Assert.assertEquals(contactPageHeaderMessage, "We welcome your feedback");
-//		
-//		// Populate Mandatory Field
-//		contactPage.enterForename(forename);
-//		contactPage.enterEmail(email);
-//		contactPage.enterMessage(message);
-//		
-//		// Click on submit button without populating fields
-//		contactPage.clickOnSubmitButton();
-//		
-//		// Validating success message
-//		String sucessMessage = "Thanks "+forename+", we appreciate your feedback.";
-//		Assert.assertEquals(sucessMessage, contactPage.getSuccessMessage());	
-//	}
+	@Test(dataProvider = "data-provider")
+	public void validateSuccessfulSubmission(String forename, String email, String message) {
+		
+		// Verify if Home Page is open or not
+		parentPage.getInstanceOf(HomePage.class).clickOnHomeTab();
+		String homePageUrl = parentPage.getCurrentURL();
+		if(homePageUrl.contains("home")) {
+			extentTest.get().log(Status.PASS, "Home Page is opened");
+		}else {
+			extentTest.get().log(Status.FAIL, "Home Page is not opened");
+		}
+		Assert.assertEquals(homePageUrl, "https://jupiter.cloud.planittesting.com/#/home");
+		
+		// Click on Contact tab and verify if it is open
+		parentPage.getInstanceOf(HomePage.class).clickOnContactTab();
+		ContactPage contactPage = parentPage.getInstanceOf(ContactPage.class);
+		String contactPageHeaderMessage = contactPage.getHeaderMessage();
+		if(contactPageHeaderMessage.contains("welcome")) {
+			extentTest.get().log(Status.PASS, "Contact Page is opened");
+		}else {
+			extentTest.get().log(Status.FAIL, "Contact Page is not opened");
+		}
+		Assert.assertEquals(contactPageHeaderMessage, "We welcome your feedback");
+		
+		
+		// Populate Mandatory Field
+		contactPage.enterForename(forename);
+		extentTest.get().log(Status.INFO, "Forename field is populated with: "+forename);
+		contactPage.enterEmail(email);
+		extentTest.get().log(Status.INFO, "Email field is populated with: "+email);
+		contactPage.enterMessage(message);
+		extentTest.get().log(Status.INFO, "Message field is populated with: "+message);
+		
+		// Click on submit button without populating fields
+		contactPage.clickOnSubmitButton();
+		extentTest.get().log(Status.INFO, "Submit button is clicked");
+		
+		// Validating success message
+		String sucessMessage = "Thanks "+forename+", we appreciate your feedback.";
+		if(sucessMessage.equalsIgnoreCase(contactPage.getSuccessMessage())) {
+			extentTest.get().log(Status.PASS, "Form for forename: "+forename+" is submitted successfully");
+		}else {
+			extentTest.get().log(Status.FAIL, "Form for forename: "+forename+" is not submitted successfully");
+		}
+		Assert.assertEquals(sucessMessage, contactPage.getSuccessMessage());	
+	}
 	
 	@Test
 	public void verifyTotalAmount() {
@@ -104,9 +190,9 @@ public class HomePageTest extends BaseTest{
 		parentPage.getInstanceOf(HomePage.class).clickOnHomeTab();
 		String homePageUrl = parentPage.getCurrentURL();
 		if(homePageUrl.contains("home")) {
-			extentTest.get().log(Status.PASS, "Hope Page is opened");
+			extentTest.get().log(Status.PASS, "Home Page is opened");
 		}else {
-			extentTest.get().log(Status.FAIL, "Hope Page is not opened");
+			extentTest.get().log(Status.FAIL, "Home Page is not opened");
 		}
 		Assert.assertEquals(homePageUrl, "https://jupiter.cloud.planittesting.com/#/home");
 		

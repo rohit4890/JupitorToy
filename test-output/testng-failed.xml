@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="4" parallel="tests" name="Failed suite [Interview Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="10" parallel="methods" name="Failed suite [Interview Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="jupitorToys.listners.TestListner"/>
   </listeners>
-  <test thread-count="4" parallel="tests" name="Home Page Test(failed)">
+  <test thread-count="10" parallel="methods" name="Home Page Test(failed)">
     <classes>
       <class name="jupitorToys.tests.HomePageTest">
         <methods>
+          <include name="validateErrorMessageOnContactPage"/>
+          <include name="validateSuccessfulSubmission" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="verifyTotalAmount"/>
           <include name="setUp"/>

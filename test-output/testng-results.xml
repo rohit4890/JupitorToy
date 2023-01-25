@@ -1,151 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-24T22:49:42 ACDT" name="Interview Suite" finished-at="2023-01-24T22:49:51 ACDT" duration-ms="8821">
+  <suite started-at="2023-01-25T10:56:50 ACDT" name="Interview Suite" finished-at="2023-01-25T10:59:34 ACDT" duration-ms="163821">
     <groups>
     </groups>
-    <test started-at="2023-01-24T22:49:42 ACDT" name="Home Page Test" finished-at="2023-01-24T22:49:51 ACDT" duration-ms="8821">
-      <class name="jupitorToys.tests.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.HomePageTest@7b7fdc8]" started-at="2023-01-24T22:49:42 ACDT" name="setUp" finished-at="2023-01-24T22:49:50 ACDT" duration-ms="8729" status="FAIL">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '4.7.2', revision: '4d4020c3b7'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [74cc3655d1e8532fcc1516ef9d1c866f, get {url=http://jupiter.cloud.planittesting.com}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.87, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: /var/folders/qz/bsvjvbdd4hz...}, goog:chromeOptions: {debuggerAddress: localhost:56141}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:56141/devtoo..., se:cdpVersion: 109.0.5414.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 74cc3655d1e8532fcc1516ef9d1c866f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.7.2', revision: '4d4020c3b7'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [74cc3655d1e8532fcc1516ef9d1c866f, get {url=http://jupiter.cloud.planittesting.com}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.87, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: /var/folders/qz/bsvjvbdd4hz...}, goog:chromeOptions: {debuggerAddress: localhost:56141}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:56141/devtoo..., se:cdpVersion: 109.0.5414.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 74cc3655d1e8532fcc1516ef9d1c866f
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:296)
-at jupitorToys.tests.BaseTest.setUp(BaseTest.java:42)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.io.UncheckedIOException: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
-... 26 more
-Caused by: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.asynchttpclient.exception.RemotelyClosedException.INSTANCE(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+    <test started-at="2023-01-25T10:56:50 ACDT" name="Home Page Test" finished-at="2023-01-25T10:59:34 ACDT" duration-ms="163821">
+      <class name="jupitorToys.tests.InterviewTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:56:50 ACDT" name="setUp" finished-at="2023-01-25T10:57:01 ACDT" duration-ms="11308" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyTotalAmount()[pri:0, instance:jupitorToys.tests.HomePageTest@7b7fdc8]" started-at="2023-01-24T22:49:51 ACDT" name="verifyTotalAmount" finished-at="2023-01-24T22:49:51 ACDT" duration-ms="1" status="SKIP">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '4.7.2', revision: '4d4020c3b7'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [74cc3655d1e8532fcc1516ef9d1c866f, get {url=http://jupiter.cloud.planittesting.com}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.87, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: /var/folders/qz/bsvjvbdd4hz...}, goog:chromeOptions: {debuggerAddress: localhost:56141}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:56141/devtoo..., se:cdpVersion: 109.0.5414.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 74cc3655d1e8532fcc1516ef9d1c866f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '4.7.2', revision: '4d4020c3b7'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [74cc3655d1e8532fcc1516ef9d1c866f, get {url=http://jupiter.cloud.planittesting.com}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.87, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: /var/folders/qz/bsvjvbdd4hz...}, goog:chromeOptions: {debuggerAddress: localhost:56141}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:56141/devtoo..., se:cdpVersion: 109.0.5414.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 74cc3655d1e8532fcc1516ef9d1c866f
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:296)
-at jupitorToys.tests.BaseTest.setUp(BaseTest.java:42)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.io.UncheckedIOException: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
-... 26 more
-Caused by: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.asynchttpclient.exception.RemotelyClosedException.INSTANCE(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+        <test-method signature="validateErrorMessageOnContactPage()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:01 ACDT" name="validateErrorMessageOnContactPage" finished-at="2023-01-25T10:57:33 ACDT" duration-ms="31729" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTotalAmount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.HomePageTest@7b7fdc8]" started-at="2023-01-24T22:49:51 ACDT" name="tearDown" finished-at="2023-01-24T22:49:51 ACDT" duration-ms="0" status="SKIP">
+        </test-method> <!-- validateErrorMessageOnContactPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:33 ACDT" name="tearDown" finished-at="2023-01-25T10:57:33 ACDT" duration-ms="123" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- jupitorToys.tests.HomePageTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:33 ACDT" name="setUp" finished-at="2023-01-25T10:57:42 ACDT" duration-ms="9124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSuccessfulSubmission(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:42 ACDT" name="validateSuccessfulSubmission" data-provider="data-provider" finished-at="2023-01-25T10:57:56 ACDT" duration-ms="13450" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rohit1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rohit1@test.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[message1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccessfulSubmission -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:56 ACDT" name="tearDown" finished-at="2023-01-25T10:57:56 ACDT" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:57:56 ACDT" name="setUp" finished-at="2023-01-25T10:58:06 ACDT" duration-ms="9921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSuccessfulSubmission(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:06 ACDT" name="validateSuccessfulSubmission" data-provider="data-provider" finished-at="2023-01-25T10:58:18 ACDT" duration-ms="12083" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rohit2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rohit2@test.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[message2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccessfulSubmission -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:18 ACDT" name="tearDown" finished-at="2023-01-25T10:58:18 ACDT" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:18 ACDT" name="setUp" finished-at="2023-01-25T10:58:25 ACDT" duration-ms="7425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSuccessfulSubmission(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:25 ACDT" name="validateSuccessfulSubmission" data-provider="data-provider" finished-at="2023-01-25T10:58:28 ACDT" duration-ms="2455" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rohit3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rohit3@test.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[message3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccessfulSubmission -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:28 ACDT" name="tearDown" finished-at="2023-01-25T10:58:28 ACDT" duration-ms="119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:28 ACDT" name="setUp" finished-at="2023-01-25T10:58:35 ACDT" duration-ms="7355" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSuccessfulSubmission(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:35 ACDT" name="validateSuccessfulSubmission" data-provider="data-provider" finished-at="2023-01-25T10:58:41 ACDT" duration-ms="5469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rohit4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rohit4@test.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[message4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccessfulSubmission -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:41 ACDT" name="tearDown" finished-at="2023-01-25T10:58:41 ACDT" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:41 ACDT" name="setUp" finished-at="2023-01-25T10:58:50 ACDT" duration-ms="8600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateSuccessfulSubmission(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:58:50 ACDT" name="validateSuccessfulSubmission" data-provider="data-provider" finished-at="2023-01-25T10:59:02 ACDT" duration-ms="12035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rohit5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rohit5@test.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[message5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccessfulSubmission -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:59:02 ACDT" name="tearDown" finished-at="2023-01-25T10:59:02 ACDT" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:59:02 ACDT" name="setUp" finished-at="2023-01-25T10:59:11 ACDT" duration-ms="9417" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyTotalAmount()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:59:11 ACDT" name="verifyTotalAmount" finished-at="2023-01-25T10:59:34 ACDT" duration-ms="22524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTotalAmount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:jupitorToys.tests.InterviewTest@6a57ae10]" started-at="2023-01-25T10:59:34 ACDT" name="tearDown" finished-at="2023-01-25T10:59:34 ACDT" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- jupitorToys.tests.InterviewTest -->
     </test> <!-- Home Page Test -->
   </suite> <!-- Interview Suite -->
 </testng-results>
